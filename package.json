@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "concurrently \"cpx config/common.js node_modules/@angular/cli/models/webpack-configs\" \"ng serve\" \"electron src/entry.live.js\"",
+    "run": "electron .",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -30,6 +31,7 @@
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
     "mutationobserver-shim": "^0.3.2",
+    "mysql": "^2.13.0",
     "rxjs": "^5.1.0",
     "sweetalert2": "^6.6.0",
     "zone.js": "^0.8.4"
@@ -37,10 +39,14 @@
   "devDependencies": {
     "@angular/cli": "1.0.0",
     "@angular/compiler-cli": "^4.0.0",
+    "@types/electron": "^1.4.35",
     "@types/jasmine": "2.5.38",
     "@types/lodash": "^4.14.50",
+    "@types/mysql": "0.0.31",
     "@types/node": "~6.0.60",
     "codelyzer": "~2.0.0",
+    "concurrently": "^3.4.0",
+    "cpx": "^1.5.0",
     "jasmine-core": "~2.5.2",
     "jasmine-spec-reporter": "~3.2.0",
     "karma": "~1.4.1",
