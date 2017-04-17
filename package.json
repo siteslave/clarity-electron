@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "concurrently \"cpx config/common.js node_modules/@angular/cli/models/webpack-configs\" \"ng serve\" \"electron src/entry.live.js\"",
     "run": "electron .",
-    "build": "ng build",
+    "build": "concurrently \"cpx config/common.js node_modules/@angular/cli/models/webpack-configs\" \"ng build --base-href=./\" \"cpx src/entry.js ./dist/\"",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
