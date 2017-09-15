@@ -34,21 +34,29 @@ export class LoginPageComponent implements OnInit {
 
   doLogin() {
     this.isLogging = true;
-    this.loginService.testLogin(this.username, this.password)
-      .then((token: string) => {
-        const decodedToken = this.jwtHelper.decodeToken(token);
-        const fullname = `${decodedToken.firstname} ${decodedToken.lastname}`;
+    const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE0OTIxNTIxNTAsImV4cCI6MTUyMzY4ODE1MCwiYXVkIjoid3d3LmV4YW1wbGUuY29tIiwic3ViIjoianJvY2tldEBleGFtcGxlLmNvbSIsImZpcnN0bmFtZSI6IkpvaG5ueSIsImxhc3RuYW1lIjoiUm9ja2V0IiwiRW1haWwiOiJqcm9ja2V0QGV4YW1wbGUuY29tIiwiUm9sZSI6WyJNYW5hZ2VyIiwiUHJvamVjdCBBZG1pbmlzdHJhdG9yIl19.PHIh0fVzpbTqi8h74stfts_CqgEmku-j0NV5G1iS0BI'
+    
+    sessionStorage.setItem('token', token);
+    sessionStorage.setItem('fullname', 'Satit Rianpit');
+    this.isLogging = false;
+    //redirect to admin module
+    this.router.navigate(['admin']);
 
-        sessionStorage.setItem('token', token);
-        sessionStorage.setItem('fullname', fullname);
-        // hide spinner
-        this.isLogging = false;
-        // redirect to admin module
-        this.router.navigate(['admin']);
-      })
-      .catch((error) => {
-        this.isLogging = false;
-        this.alert.error(JSON.stringify(error));
-      });
+    // this.loginService.testLogin(this.username, this.password)
+    //   .then((token: string) => {
+    //     const decodedToken = this.jwtHelper.decodeToken(token);
+    //     const fullname = `${decodedToken.firstname} ${decodedToken.lastname}`;
+
+    //     sessionStorage.setItem('token', token);
+    //     sessionStorage.setItem('fullname', fullname);
+    //     // hide spinner
+    //     this.isLogging = false;
+    //     // redirect to admin module
+    //     this.router.navigate(['admin']);
+    //   })
+    //   .catch((error) => {
+    //     this.isLogging = false;
+    //     this.alert.error(JSON.stringify(error));
+    //   });
   }
 }
