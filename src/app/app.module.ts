@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { ClarityModule } from 'clarity-angular';
+import { ClarityModule } from '@clr/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -16,6 +16,9 @@ import { AdminModule } from './admin/admin.module';
 import { AuthGuard } from './auth-guard.service';
 import { AlertService } from './alert.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
+import '@clr/icons';
+import '@clr/icons/shapes/all-shapes';
 
 @NgModule({
   declarations: [
