@@ -54,7 +54,6 @@
     "typescript": "~2.8.1",
     "@types/lodash": "^4.14.107",
     "@types/mysql": "0.0.34",
-    "@types/knex": "0.14.11",
     "concurrently": "^3.5.1",
     "cpx": "^1.5.0"
   }
