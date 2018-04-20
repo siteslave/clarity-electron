@@ -1,11 +1,11 @@
-# Clarity + Angular 4 + Electron seed template
+# Clarity + Angular + Electron seed template
 
 ## Installation
 
 ```
-git clone https://github.com/siteslave/clarity-angular4-electron
+git clone https://github.com/siteslave/clarity-electron
 
-cd clarity-angular4-electron
+cd clarity-electron
 
 npm i
 ```
